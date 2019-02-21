@@ -1,0 +1,76 @@
+<h1 align=center>All Javascript by Jacob</h1>
+
+
+<script>
+function my01(){
+  document.all.myArea01.value = document.all.myText01.value
+}
+
+
+
+</script>
+
+<input type=text id="myText01" value="7"><br>
+<textarea id="myArea01" rows=4 cols=70></textarea><br>
+
+<input type=button value="Input" onclick="{
+   my01()
+}">
+
+<input type=button value="Loops" onclick="{
+  document.all.myArea01.value = ''
+   for ( x=1; x <=100; x++){
+	document.all.myArea01.value += x + ', ' 
+   }
+}">
+
+<input type=button value="Decisions" onclick="{
+   x = 8 
+   if (x == 9){
+      document.all.myArea01.value = 'wow a nine'
+    } else {
+      document.all.myArea01.value = 'wow not a nine'
+    }
+}">
+
+
+<input type=button value="arrays" onclick="{
+   myMax = 3
+   myArray = new Array(myMax)
+   myArray[1] = 'Jerry'
+   myArray[2] = 'Tom'
+   myArray[3] = 'Mary'
+   document.all.myArea01.value = ''
+   for ( x = 1; x <= myMax; x++){
+    document.all.myArea01.value += myArray[x] + ', '
+   }
+
+
+}">
+
+
+<input type=button value="events onmouseover" onmouseover="{
+   document.all.myArea01.value = 'I miss my wife tails.'
+}">
+ 
+  <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">
+events site</a>
+
+<input type=button value="Object Example" onClick="{
+  person = {
+  firstName: 'Big'
+  lastName: 'Boss'
+  age: 37, 
+  eyeColor: 'Blue'
+}
+   document.all.myArea01.value = 'person.firstName is ' + 
+   person.firstName + ' person.age is '
+}">
+
+
+   
+
+
+
+
+

@@ -1,0 +1,21 @@
+<h2 align=center>Auto Move by Jacob </h2>
+
+<img src="issame.png" style="postition:realative;
+z-index:-1; left:0px; top:0px height:100px; width:100px;">
+
+<script> var myLooping = 0 </script>
+
+<input type=button value="auto right" onclick="{
+  clearInterval(myLooping)
+  myLooping = setInterval(function(){
+    document.getElementById('issame.png').style.left = 
+    parseInt(document.getElementById('issame.png').style.left + 10 + 'px'
+     
+    if (parseInt(document.getElementById('issame.png').style.left) > 600){
+      document.getElementById('issame.png).style.left = '0px' 
+   } 
+  }, 60)
+}">
+
+</body>
+</html>

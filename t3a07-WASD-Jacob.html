@@ -1,3 +1,4 @@
+<body background="300iq.gif">
 <h1 align=center> WASD By Jacob</h1>
 <html>
 
@@ -9,20 +10,40 @@
    document.all.myText01.value = event.key
 
    if (event.key == 'd') { 
-	document.getElementById('raccoon').style.left = 
-	parseInt(document.getElementById('raccoon').style.left) + 10 + 'px' }
+	document.getElementById('sobble').style.left = 
+	parseInt(document.getElementById('sobble').style.left) + 10 + 'px' }
    if (event.key == 'a') { 
-	document.getElementById('raccoon').style.left = 
-	parseInt(document.getElementById('raccoon').style.left) - 10 + 'px' }
+	document.getElementById('sobble').style.left = 
+	parseInt(document.getElementById('sobble').style.left) - 10 + 'px' }
    if (event.key == 's') { 
-	document.getElementById('raccoon').style.top = 
-	parseInt(document.getElementById('raccoon').style.top) + 10 + 'px' }
+	document.getElementById('sobble').style.top = 
+	parseInt(document.getElementById('sobble').style.top) + 10 + 'px' }
    if (event.key == 'w') { 
-	document.getElementById('raccoon').style.top = 
-	parseInt(document.getElementById('raccoon').style.top) - 10 + 'px' }
+	document.getElementById('sobble').style.top = 
+	parseInt(document.getElementById('sobble').style.top) - 10 + 'px' }
+
+
+
+   if (event.key == 'ArrowRight') { 
+	document.getElementById('sobble').style.left = 
+	parseInt(document.getElementById('sobble').style.left) + 10 + 'px' }
+
+ if (event.key == 'ArrowLeft') { 
+	document.getElementById('sobble').style.left = 
+	parseInt(document.getElementById('sobble').style.left) - 10 + 'px' }
+
+ if (event.key == 'ArrowDown') { 
+	document.getElementById('sobble').style.top = 
+	parseInt(document.getElementById('sobble').style.top) + 10 + 'px' }
+ 
+if (event.key == 'ArrowUp') { 
+	document.getElementById('sobble').style.top = 
+	parseInt(document.getElementById('sobble').style.top) - 10 + 'px' }
+
+
 }">
 
-<img src="raccoon.jpg" width=100px" id="raccoon" style="position: relative; left:0px; top:0px; height:130px; width:130px">
+<img src="sobble.png" width=100px" id="sobble" style="position: relative; left:0px; top:0px; height:230px; width:130px">
 
 <input type=text id="myText01" value=0>
 

@@ -1,0 +1,41 @@
+<h1 align=center>Review by Jacob </h1>
+
+
+<input type=text id="myText01" value="5"><br>
+<textarea id="myArea01" rows=4 cols=70></textarea><br>
+
+<input type=button value="Basic" onclick="{
+   x = document.all.myText01.value
+   if (x == 9) {
+      document.all.myArea01.value = 'wow a nine'
+    } else {
+      document.all.myArea01.value = 'wow not a nine'
+    }
+}">
+
+<input type=button value="Courses" onmouseover="{
+   document.all.myArea01.value = 'Input/Output, Variables, Decisions, Loops, Arrays, Functions, Events, Objects, Classes'
+}">
+
+
+
+
+<input type=button value="Medium" onclick="{
+  document.all.myArea01.value = ''
+   for ( x=1; x <=100; x++){
+	document.all.myArea01.value += x + ', ' 
+   }
+}">
+
+<input type=button value="Advanced" onclick="{
+person = {
+  firstName: 'Adam',
+  lastName: 'Sandler',
+  age: 52, 
+  };
+   document.all.myArea01.value = 'firstName is ' + 
+   person.firstName + ' lastName is ' + person.lastName
+}">
+
+
+

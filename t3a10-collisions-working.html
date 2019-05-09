@@ -1,10 +1,10 @@
-<body bgcolor="blue"   onMouseMove="{
+<body bgcolor="purple"   onMouseMove="{
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
 
 
 
 }">
-<h2 align=center>Collisions by Fred </h2>
+<h2 align=center>Collisions by Jacob </h2>
 
 <script>
 
@@ -28,55 +28,33 @@ function myHitOther(my1, my2){
 
 </script>
 
-
-
-</style>
-</html>
-
-<html>
-<head>
-<style>
-img {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-}
-</style>
-</head>
-<body>
-<img src="hotelmariobg.jpg" width="500" height="300">
-</body>
-</html>
-
-
 <input type=text id="myLocation" value=0 size=14"><br>
 <hr>
 
-<img src="nice.png"  id="nice" 
-style="position:absolute; z-index:-1; left:100px; top:0px; height:20px; width:20px;">
+<img src="raccoon.jpg"  id="raccoon" 
+style="position:absolute; z-index:-1; left:48px; top:232px; height:120px; width:110px;">
 
 
-<img src="hotelmariobg.jpg"  id="hotelmariobg" 
-style="position:absolute; z-index:-1; left:100px; top:0px; height:30px; width:30px;">
+<img src="dronk.png"  id="dronk" 
+style="position:absolute; z-index:-1; left:644px; top:200px; height:190px; width:240px;">
 
 
 <input type=button value="Go right"  onClick="{
 
-   if ( myHitOther('nice','hotelmariobg') ){
-       document.getElementById('nice').style.left = '10px'
-       //alert('Eh Luigi')
+   if ( myHitOther('raccoon','dronk') ){
+       document.getElementById('raccoon').style.left = '40px'
+       //alert('I win')
 
    }
 
 
-   document.getElementById('nice').style.left = 
-      parseInt(document.getElementById('nice').style.left) + 10 + 'px'
+   document.getElementById('raccoon').style.left = 
+      parseInt(document.getElementById('raccoon').style.left) + 10 + 'px'
 
 
 
     
-   //document.getElementById('nice').style.top = parseInt(document.getElementById('nice').style.top) + 10 + 'px'
+   //document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
 
 }">
 
@@ -84,4 +62,64 @@ style="position:absolute; z-index:-1; left:100px; top:0px; height:30px; width:30
 
 
 </body>
+
+
+<body onkeydown="{
+
+if ( myHitOther('raccoon','dronk') ){
+       document.getElementById('raccoon').style.left = '40px'
+       //alert('I win')
+}
+
+
+   document.all.myText01.value = event.key
+
+   if (event.key == 'd') { 
+	document.getElementById('raccoon').style.left = 
+	parseInt(document.getElementById('raccoon').style.left) + 10 + 'px' }
+
+
+
+   if (event.key == 'a') { 
+	document.getElementById('raccoon').style.left = 
+	parseInt(document.getElementById('raccoon').style.left) - 10 + 'px' }
+
+
+
+   if (event.key == 's') { 
+	document.getElementById('raccoon').style.top = 
+	parseInt(document.getElementById('raccoon').style.top) + 10 + 'px' }
+
+
+
+   if (event.key == 'w') { 
+	document.getElementById('raccoon').style.top = 
+	parseInt(document.getElementById('raccoon').style.top) - 10 + 'px' }
+
+
+
+}">
+
+
+
+<input type=text id="myText01" value=0>
+
+
+
+</BODY>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

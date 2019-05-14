@@ -1,19 +1,71 @@
+
 <h2 align=center>Auto Move by Jacob </h2>
 
-<img src="issame.png" style="postition:realative;
-z-index:-1; left:0px; top:0px height:100px; width:100px;">
+<img src="snake2.png"  id="snake" style="position:relative; 
+z-index:-1; left:0px; top:0px; height:160px; width:100px;">
+
+<body bgcolor="white"   onMouseMove="{
+   document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
+}">
+<input type=text id="myLocation" value=0 size=14"><br>
+
+
 
 <script> var myLooping = 0 </script>
 
 <input type=button value="auto right" onclick="{
-  clearInterval(myLooping)
-  myLooping = setInterval(function(){
-    document.getElementById('issame.png').style.left = 
-    parseInt(document.getElementById('issame.png').style.left + 10 + 'px'
-     
-    if (parseInt(document.getElementById('issame.png').style.left) > 600){
-      document.getElementById('issame.png).style.left = '0px' 
-   } 
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+   document.getElementById('snake').style.left = 
+   parseInt(document.getElementById('snake').style.left) + 10 + 'px' 
+   
+   if (parseInt(document.getElementById('snake').style.left) > 600){
+      document.getElementById('snake').style.left = '0px'
+  }
+
+  }, 60)
+}">
+
+
+<input type=button value="auto left" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+   document.getElementById('snake').style.left = 
+   parseInt(document.getElementById('snake').style.left) + -10 + 'px' 
+   
+   if (parseInt(document.getElementById('snake').style.left) < -200){
+      document.getElementById('snake').style.left = '0px'
+  }
+
+  }, 60)
+}">
+
+
+
+
+<input type=button value="auto down" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+   document.getElementById('snake').style.top = 
+   parseInt(document.getElementById('snake').style.top) + 10 + 'px' 
+   
+   if (parseInt(document.getElementById('snake').style.top) > 207){
+      document.getElementById('snake').style.top = '0px'
+  }
+
+  }, 60)
+}">
+
+<input type=button value="auto up" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+   document.getElementById('snake').style.top = 
+   parseInt(document.getElementById('snake').style.top) + -10 + 'px' 
+   
+   if (parseInt(document.getElementById('snake').style.top) < -300){
+      document.getElementById('snake').style.top = '0px'
+  }
+
   }, 60)
 }">
 

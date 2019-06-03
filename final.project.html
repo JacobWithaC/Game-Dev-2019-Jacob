@@ -1,89 +1,14 @@
-
-<body id="myBody" style="background-repeat:repeat; background-size: 300%" background="starbois.png">
-
-<script>
- let myGlobalX = 0
- let myClock
-</script>
+<body background="starbois.png">
 
 
 
 
 
+<input type=text id=myScore value=0>
 
-
-
-
-<input id="myButton01" type=button value="background move left" onclick="{
- myTemp = '100px 0px'
- myGlobalX -= 5 
- myTemp = myGlobalX + 'px 0px'
- document.getElementById('myBody').style.backgroundPosition =myTemp
-
-}">
-
-<input type=button value="Auto Background Left" onclick="{
-  clearInterval(myClock)
-  myClock = setInterval(function(){
-     document.getElementById('myButton01').click()
- }, 100)
-
-}">
-
-<img id="sobble" style="position:relative; width:110px; height:140px; top:0px; left:0px" src="sobble.png">
-
-<img id="grookgang" style="position:relative; width:150px; height:150px; top:0px; left:0px" src="GrookGang.png">
-
-
-<html>
-
-<p>
-
-
-<body onkeydown="{
-
-
-if ( myHitOther('sobble','grookgang') ){
-       document.getElementById('sobble').style.left = '40px'
-       //alert('I win')
-}
-
-
-
-   if (event.key == 'd') { 
-	document.getElementById('sobble').style.left = 
-	parseInt(document.getElementById('sobble').style.left) + 10 + 'px' }
-   if (event.key == 'a') { 
-	document.getElementById('sobble').style.left = 
-	parseInt(document.getElementById('sobble').style.left) - 10 + 'px' }
-   if (event.key == 's') { 
-	document.getElementById('sobble').style.top = 
-	parseInt(document.getElementById('sobble').style.top) + 10 + 'px' }
-   if (event.key == 'w') { 
-	document.getElementById('sobble').style.top = 
-	parseInt(document.getElementById('sobble').style.top) - 10 + 'px' }
-
-
-
-   if (event.key == 'ArrowRight') { 
-	document.getElementById('sobble').style.left = 
-	parseInt(document.getElementById('sobble').style.left) + 10 + 'px' }
-
- if (event.key == 'ArrowLeft') { 
-	document.getElementById('sobble').style.left = 
-	parseInt(document.getElementById('sobble').style.left) - 10 + 'px' }
-
- if (event.key == 'ArrowDown') { 
-	document.getElementById('sobble').style.top = 
-	parseInt(document.getElementById('sobble').style.top) + 10 + 'px' }
+<input type=button value="Reset" onClick="{
  
-if (event.key == 'ArrowUp') { 
-	document.getElementById('sobble').style.top = 
-	parseInt(document.getElementById('sobble').style.top) - 10 + 'px' }
-
-
-
-
+  document.getElementById.value = 20
 }">
 
 
@@ -111,9 +36,127 @@ function myHitOther(my1, my2){
 
 </script>
 
+
+
+<img src="sobble.png"  id="raccoon" 
+style="position:absolute; z-index:-1; left:0px; top:232px; height:130px; width:100px;">
+
+
+<img src="barry.png"  id="dronk" 
+style="position:absolute; z-index:-1; left:644px; top:200px; height:30px; width:30px;">
+
+<img src="grookgang.png"  id="dvd" 
+style="position:absolute; z-index:-1; left:800px; top:400px; height:130px; width:130px;">
+
+
+
+
+
+
+</body>
+
+
+<body onkeydown="{
+
+
+
+if ( myHitOther('raccoon','dronk') ){
+  myTotal = myTotal + 1
+  document.getElementById('myScore').value = myTotal
+          
+
+}
+
+if ( myHitOther('raccoon','dronk') ){
+       document.getElementById('dronk').style.left =
+       parseInt(document.getElementById('dronk').style.left ) +  -10000 + 'px' 
+}
+
+if ( getElementById('myScore')  .value > 20){ 
+location='http://www.google.ca'
+
+}
+
+   if (event.key == 'd') { 
+	document.getElementById('raccoon').style.left = 
+	parseInt(document.getElementById('raccoon').style.left) + 11 + 'px' }
+
+
+
+   if (event.key == 'a') { 
+	document.getElementById('raccoon').style.left = 
+	parseInt(document.getElementById('raccoon').style.left) - 11 + 'px' }
+
+
+
+   if (event.key == 's') { 
+	document.getElementById('raccoon').style.top = 
+	parseInt(document.getElementById('raccoon').style.top) + 11 + 'px' }
+
+
+
+   if (event.key == 'w') { 
+	document.getElementById('raccoon').style.top = 
+	parseInt(document.getElementById('raccoon').style.top) - 11 + 'px' }
+
+
+
+}">
+
+
+
+
+
 </BODY>
 
-</HTML>
+<script>
+var myTotal = 0
+
+</script>
+
+
+
+<script>
+var myLooping = 0 
+var mySpeed = .5
+var myDirection = 1
+var myTotal = 0
+</script>
+
+<input type=button value="auto right" onclick="{
+  clearInterval(myLooping)
+  myLooping = setInterval(function(){
+
+  mySpeed = (Math.floor(Math.random()*.3)+5)  * myDirection
+
+  document.getElementById('dvd').style.left = 
+  parseInt(document.getElementById('dvd').style.left) + mySpeed + 'px'
+
+if (parseInt(document.getElementById('dvd').style.left) > 1450){
+   myDirection = myDirection * -1
+
+}
+
+console.log(mySpeed)
+
+
+if (parseInt(document.getElementById('dvd').style.left) < 0){
+   myDirection = myDirection * -1
+
+}
+  
+
+
+ },60)
+}">
+
+</body>
+</html>
+
+
+
+
+
 
 
 

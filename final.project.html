@@ -1,6 +1,6 @@
 <body background="starbois.png">
 
-
+<font color=white> Collect the barrys---Press to start---<br>
 
 
 
@@ -39,6 +39,9 @@ style="position:absolute; z-index:-1; left:0px; top:232px; height:130px; width:1
 <img src="grookgang.png"  id="dvd" 
 style="position:absolute; z-index:-1; left:800px; top:400px; height:130px; width:130px;">
 
+<img src="gun-removebg.png"  id="vile" 
+style="position:absolute; z-index:-1; left:300px; top:400px; height:130px; width:130px;">
+
 <img src="barry.png"  id="dronk" 
 style="position:absolute; z-index:-1; left:708px; top:289px; height:30px; width:30px;">
 
@@ -64,12 +67,12 @@ style="position:absolute; z-index:-1; left:727px; top:586px; height:30px; width:
 style="position:absolute; z-index:-1; left:0px; top:0px; height:30px; width:30px;">
 
 <img src="barry.png"  id="dronk8" 
-style="position:absolute; z-index:-1; left:100px; top:10px; height:30px; width:30px;">
+style="position:absolute; z-index:-1; left:1390px; top:10px; height:30px; width:30px;">
 
 <img src="barry.png"  id="dronk9" 
 style="position:absolute; z-index:-1; left:32px; top:297px; height:30px; width:30px;">
 
-<img src="barry.png"  id="dronk9" 
+<img src="barry.png"  id="dronk32" 
 style="position:absolute; z-index:-1; left:400px; top:400px; height:30px; width:30px;">
 
 <img src="barry.png"  id="dronk0" 
@@ -85,7 +88,10 @@ location.reload();
  
 }
 
-
+if ( myHitOther('raccoon','vile') ){
+location.reload();
+ 
+}
 
 
 
@@ -174,7 +180,14 @@ if ( myHitOther('raccoon','dronk0') ){
   document.getElementById('myScore').value = myTotal
 }
 
-if ( getElementById('myScore')  .value > 20){ 
+if ( myHitOther('raccoon','dronk32') ){
+       document.getElementById('dronk32').style.left =
+       parseInt(document.getElementById('dronk32').style.left ) +  -10000 + 'px' 
+         myTotal = myTotal + 1
+  document.getElementById('myScore').value = myTotal
+}
+
+if ( getElementById('myScore')  .value > 11){ 
 location='http://www.google.ca'
 
 }
@@ -226,7 +239,7 @@ var myDirection = 1
 var myTotal = 0
 </script>
 
-<input type=button  onclick="{
+<input type=button  value="Start" onclick="{
 
  
   clearInterval(myLooping)
@@ -237,8 +250,10 @@ var myTotal = 0
   document.getElementById('dvd').style.left = 
   parseInt(document.getElementById('dvd').style.left) + mySpeed + 'px'
 
-  document.getElementById('dvd').style.top = 
-  parseInt(document.getElementById('dvd').style.top) + mySpeed + 'px'
+
+  document.getElementById('vile').style.top = 
+  parseInt(document.getElementById('vile').style.top) + mySpeed + 'px'
+
 
 
 if (parseInt(document.getElementById('dvd').style.left) > 1450){
@@ -249,17 +264,25 @@ if (parseInt(document.getElementById('dvd').style.left) > 1450){
 console.log(mySpeed)
 
 
+if (parseInt(document.getElementById('vile').style.left) < 0){
+   myDirection = myDirection * -1
+
+}
+
+if (parseInt(document.getElementById('vile').style.top) > 600){
+   myDirection = myDirection * -1
+
+}
+
+
 if (parseInt(document.getElementById('dvd').style.left) < 0){
    myDirection = myDirection * -1
 
 }
   
-if (parseInt(document.getElementById('dvd').style.top) > 600){
-   myDirection = myDirection * -1
 
-}
 
-if (parseInt(document.getElementById('dvd').style.top) < 0){
+if (parseInt(document.getElementById('vile').style.top) < 0){
    myDirection = myDirection * -1
 
 }
